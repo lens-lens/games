@@ -10,7 +10,9 @@ player_y = 0
 player_found_key = False
 steps = 0
 
+print('The key is here: ')
 print(key_x, key_y)
+print('If you want to find it... ')
 
 while not player_found_key:
     steps += 1
