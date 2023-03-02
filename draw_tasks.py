@@ -14,7 +14,9 @@ funkcja
 #TODO KOD - prawidłowy kod na podstawie pseudokodu:
 def draw_task():
     numbers = [1, 2, 3, 4, 5, 6]
-    random.shuffle(numbers)
+    random.shuffle(numbers) #pomieszanie kolejności
     return numbers
 
 print(draw_task())
+
+#TODO 1) losowanie 1 zad na raz i zwracanie go bez powtórzenia z historią zapisaną w txt
