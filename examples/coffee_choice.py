@@ -1,4 +1,4 @@
-#TODO: uzytkownik wybiera kawę z mlekiem lub bez:
+#TODO: uzytkownik wybiera kawę z mlekiem albo bez:
 """
 input: mozliwe kawy w kawiarni
 output: wybór kawy przez uytkownika
