@@ -8,3 +8,5 @@ milenkas_favs_colours = {'pink':1, 'violet':2, 'green':3}
 
 your_choice = input("Which one of 3 favs Milenka's colours is: ")
 print(milenkas_favs_colours.get(your_choice, f"{your_choice} isn't"))
+
+#TODO: przejście po pętli do momentu wymienienia 3 kolorów z listy(słownika)

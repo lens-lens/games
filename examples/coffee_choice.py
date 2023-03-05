@@ -13,8 +13,10 @@ without_milk = True
 def what_coffe_you_choose(coffe_choice) -> bool:
     if coffe_choice is with_milk:
         return False
-    else: 
+    elif coffe_choice is without_milk:
         return True
+    else: 
+        pass
     
 choosen_coffee_with = what_coffe_you_choose(coffe_choice=with_milk)
 print('You order coffee', choosen_coffee_with)
