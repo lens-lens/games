@@ -6,20 +6,21 @@ output: wybór kawy przez uytkownika
 >zwrócić True or False
 """
 
-input('Choose coffe: with milk or without milk: ')
-with_milk = False
-without_milk = True
+user_choice = input('Choose coffe: with milk or without milk: ')
 
-def what_coffe_you_choose(coffe_choice) -> bool:
-    if coffe_choice is with_milk:
+def is_coffe_without_milk(coffe_choice: bool) -> bool:
+    if coffe_choice == "with milk":
         return False
-    elif coffe_choice is without_milk:
+    elif coffe_choice == "without milk":
         return True
-    else: 
-        pass
-    
-choosen_coffee_with = what_coffe_you_choose(coffe_choice=with_milk)
-print('You order coffee', choosen_coffee_with)
+    else:
+        print("write 'with milk' or 'without milk'")
 
-choosen_coffee_without = what_coffe_you_choose(coffe_choice=without_milk)
-print('You order coffee', choosen_coffee_without)
+coffe_without_milk = is_coffe_without_milk(coffe_choice=user_choice)
+print('Your coffee will be without milk:', coffe_without_milk)
+
+# choosen_coffee_with = what_coffe_you_choose(coffe_choice=with_milk)
+# print('You order coffee', choosen_coffee_with)
+
+# choosen_coffee_without = what_coffe_you_choose(coffe_choice=without_milk)
+# print('You order coffee', choosen_coffee_without)
