@@ -23,10 +23,21 @@ body:
             j. jeśli nie: print nie i powtórz wybór kolorów
 """
 
-
-
-
 milenkas_favs_colours = {'pink':1, 'violet':2, 'green':3}
+guessed_chosen_colours = []
 
-your_choice = input("Which one of 3 favs Milenka's colours is: ")
-print(milenkas_favs_colours.get(your_choice, f"{your_choice} isn't"))
+while True:
+    your_choice = input("Which one of 3 favs Milenka's colours is: ")
+    print(milenkas_favs_colours.get(your_choice, f"{your_choice} isn't"))
+
+    if your_choice in milenkas_favs_colours.keys():
+        guessed_chosen_colours.append(your_choice)
+        print(f'Great! {your_choice} is one of them!')
+        if guessed_chosen_colours.sort() == list(milenkas_favs_colours.keys()).sort:
+            break
+        continue
+    else:
+        print(f"Oh no! {your_choice} isn't! :c")
+        continue
+
+#TODO: wykorzystanie rankingu kolejności w odpowiedziach w outpucie
