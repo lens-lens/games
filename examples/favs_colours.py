@@ -5,7 +5,7 @@ output: wartość trafionego koloru 1-3 lub info, ze ten kolor nie zalicza się
 """
 
 """
-program zgadywanka kolorow:
+ZGADYWANKA:
     input -> None
     output -> jak zgadniesz wszystkie -> print "super koniec"
 
@@ -33,11 +33,12 @@ while True:
     if your_choice in milenkas_favs_colours.keys():
         guessed_chosen_colours.append(your_choice)
         print(f'Great! {your_choice} is one of them!')
-        if guessed_chosen_colours.sort() == list(milenkas_favs_colours.keys()).sort:
+        if len(guessed_chosen_colours) == 3: #do poprawy (bo mogą działać np 3x pink)
             break
         continue
     else:
         print(f"Oh no! {your_choice} isn't! :c")
         continue
 
+#TODO: skończenie pętli po wymienieniu 3 kolorów ze słownika
 #TODO: wykorzystanie rankingu kolejności w odpowiedziach w outpucie
