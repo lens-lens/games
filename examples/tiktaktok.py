@@ -3,9 +3,11 @@ input:
     1) pusta plansza
     2) ruch uzytkownika x
     3) ruch uzytkownika y
-    4) warunek zakończenia gry
-    5) powtarzanie ruchów wypełniając puste pola
-    6) przerwanie gry po osiągnięciu warunku
+    4) powtarzanie ruchów wypełniając puste pola
+    5) warunki:
+        - brak mozliwosci nadpisywania ruchow drugiego gracza
+        - zakończenie gry po trzech polach wypełnionych zgodnie z zasadami
+        - zakończenie gry po 9 ruchach
 output: stan gry, az do spełnienia warunku i zakończenia
 '''
 #TODO 1: pusta plansza
@@ -27,16 +29,34 @@ level_3 = [field_20, field_21, field_22]
 
 game_field = [level_1, level_2, level_3]
 # print(game_field)
-for level in game_field:
-    print(level)
+for field in game_field:
+    print(field)
 
-#TODO 2: ruch uzytkownika
-x, y = map(int, input('Wybierz pole od 0 0 do 2 2: ').split())
-print(f'Your x is {x} and your y is {y}')
-game_field[x][y] = 'x'
-# print(game_field)
-for level in game_field:
-    print(level)
+#TODO 4: zapętlenie ruchów
+move = 0
+while move < 5:
+    move += 1
 
-#TODO 3: kolejne ruchy
+#TODO 2: ruch uzytkownika x
+    x, y = map(int, input('Wybierz pole od 0 0 do 2 2: ').split())
+    print(f'Your x is {x} and your y is {y}')
+    if game_field[x][y] == '':
+        game_field[x][y] = 'x'
+    else:
+        print('This field is not empty')
+        break
 
+    for field in game_field:
+        print(field)
+
+#TODO 3: ruch uzytkownika o
+    x2, y2 = map(int, input('Wybierz pole od 0 0 do 2 2: ').split())
+    print(f'Your x is {x} and your y is {y}')
+    if game_field[x2][y2] == '':
+        game_field[x2][y2] = 'o'
+    else:
+        print('This field is not empty')
+        break
+
+    for field in game_field:
+        print(field)
