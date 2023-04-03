@@ -34,29 +34,52 @@ for field in game_field:
 
 #TODO 4: zapętlenie ruchów
 move = 0
-while move < 5:
-    move += 1
 
-#TODO 2: ruch uzytkownika x
+def player_move(sign:str) -> bool:
     x, y = map(int, input('Wybierz pole od 0 0 do 2 2: ').split())
     print(f'Your x is {x} and your y is {y}')
     if game_field[x][y] == '':
         game_field[x][y] = 'x'
     else:
         print('This field is not empty')
-        break
+        return False
 
     for field in game_field:
         print(field)
+    return True
 
-#TODO 3: ruch uzytkownika o
-    x2, y2 = map(int, input('Wybierz pole od 0 0 do 2 2: ').split())
-    print(f'Your x is {x} and your y is {y}')
-    if game_field[x2][y2] == '':
-        game_field[x2][y2] = 'o'
-    else:
-        print('This field is not empty')
+while move < 9:
+    move += 1
+    player = 'x'
+    is_even = move%2
+    if is_even == 0:
+        player = 'o'
+
+    ok = player_move(player)
+    if ok is not True:
         break
 
-    for field in game_field:
-        print(field)
+
+#TODO 2: ruch uzytkownika x
+#     x, y = map(int, input('Wybierz pole od 0 0 do 2 2: ').split())
+#     print(f'Your x is {x} and your y is {y}')
+#     if game_field[x][y] == '':
+#         game_field[x][y] = 'x'
+#     else:
+#         print('This field is not empty')
+#         break
+
+#     for field in game_field:
+#         print(field)
+
+# #TODO 3: ruch uzytkownika o
+#     x2, y2 = map(int, input('Wybierz pole od 0 0 do 2 2: ').split())
+#     print(f'Your x is {x} and your y is {y}')
+#     if game_field[x2][y2] == '':
+#         game_field[x2][y2] = 'o'
+#     else:
+#         print('This field is not empty')
+#         break
+
+#     for field in game_field:
+#         print(field)
